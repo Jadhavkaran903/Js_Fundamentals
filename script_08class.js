@@ -202,7 +202,14 @@ console.log(printaray(birthyear2, tenPercent));
 //----------------------------------------------------------
 
 let joiningYear = [2011, 2015, 2014, 2016, 2020, 2009];
-let namesA = ["Karan Jadhav", "Prasad Dhavle", "Abhieet Dhaide", "Pratiksha Palve", "Tushar Hande", "Ashutosh Chukekar"];
+let namesA = [
+  "Karan Jadhav",
+  "Prasad Dhavle",
+  "Abhieet Dhaide",
+  "Pratiksha Palve",
+  "Tushar Hande",
+  "Ashutosh Chukekar",
+];
 
 function Service(arr) {
   let years = [];
@@ -225,12 +232,19 @@ console.log(`Service provided [${ServiceDone}] years`);
 let ServiceRemain = ServiceA(joiningYear);
 console.log(`Service remaining until your age is[${ServiceRemain}] years`);
 
-for(let k=0;k<namess.length;k++){
-  console.log("Thank you Mr/Miss",namesA[k],"for your",ServiceDone[k],"years of service")
+for (let k = 0; k < namess.length; k++) {
+  console.log(
+    "Thank you Mr/Miss",
+    namesA[k],
+    "for your",
+    ServiceDone[k],
+    "years of service"
+  );
 }
-let sorted =ServiceDone.sort(function(a, b){return b-a})
-console.log(sorted)
-
+let sorted = ServiceDone.sort(function (a, b) {
+  return b - a;
+});
+console.log(sorted);
 
 //-----------------------------------------------------------------------------
 
@@ -256,3 +270,40 @@ function addA(x, y) {
   }
 }
 addA(12, 13);
+
+//19 Aug 2021
+
+class Grandfather {
+  constructor(gname, lastname, age) {
+    (this.gname = gname), (this.lastname = lastname), (this.age = age);
+  }
+  displayName() {
+    console.log(`My name is ${this.gname} and my lastname is ${this.lastname}`);
+  }
+}
+
+class Father extends Grandfather {
+  constructor(gname, lastname, age, fname, fage) {
+    super(gname, lastname, age);
+    (this.fname = fname), (this.fage = fage);
+  }
+  displayName() {
+    console.log(`My name is ${this.fname} and my lastname is ${this.lastname}`);
+  }
+}
+class son extends Father {
+  constructor(gname, lastname, age, fname, fage, sname, sage) {
+    super(gname, lastname, age, fname, fage);
+    (this.sname = sname), (this.sage = sage);
+  }
+  displayName() {
+    console.log(`My name is ${this.sname} and my lastname is ${this.lastname}`);
+  }
+}
+
+let Karan11 = new son("Govindrao", "Jadhav", 72, "Rajendra", 50, "Karan", 25);
+Karan11.displayName();
+let Rajendra1 = new Father("Govindrao", "Jadhav", 72, "Rajendra", 50);
+Rajendra1.displayName();
+let Govindrao1 = new Grandfather("Govindrao", "Jadhav", 72);
+Govindrao1.displayName();
