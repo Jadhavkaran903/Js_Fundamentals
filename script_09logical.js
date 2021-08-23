@@ -198,3 +198,56 @@ console.log(newArray);
 console.log(
   "----------------------------------------------------------------------------------------------"
 );
+
+//Problem 10---->Compresing the string
+
+function compress(string) {
+  let stringC = "";
+  let countC = 1;
+  let index = 0;
+  for (let i = 0; i < string.length; i++) {
+    if (string.charAt(i) === string.charAt(i + 1)) {
+      countC += 1;
+    } else {
+      stringC += `${string.charAt(i)}${countC}`;
+      countC = 1;
+    }
+  }
+  console.log(stringC);
+}
+
+compress("aaaabbbccd");
+
+//or
+
+function Compressed2(stringA)
+{
+  let unCompressedString =""
+  let countU=0
+  for(let i=0;i<stringA.length;i++){
+    countU++;
+    if(stringA[i] !=stringA[i+1]){
+      unCompressedString += stringA[i]+countU
+      countU=0
+    }
+  }
+  console.log(unCompressedString)
+
+}
+Compressed2("aaaabbbccd")
+
+
+
+
+console.log(
+  "----------------------------------------------------------------------------------------"
+);
+
+//Problem 12---->
+
+let numString = "123";
+let newstr = "";
+for (let i = numString.length - 1; i >= 0; i--) {
+  newstr += numString[i];
+}
+console.log(`ans${newstr}`);
