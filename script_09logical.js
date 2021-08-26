@@ -127,12 +127,13 @@ console.log(
 
 //Problem 7---->find out count of word in given string
 
-let fruits = "apple chiku apple mango apple grapes apple";
-let spr = fruits.split(" ");
+let statementA =
+  "I am new to javascript and i wish to learn every concept of javascript . javascript is great";
+let spr = statementA.split(" ");
 
 let count = 0;
 for (let a = 0; a < spr.length; a++) {
-  if (spr[a].includes("apple")) {
+  if (spr[a].includes("javascript")) {
     count++;
   }
 }
@@ -220,34 +221,112 @@ compress("aaaabbbccd");
 
 //or
 
-function Compressed2(stringA)
-{
-  let unCompressedString =""
-  let countU=0
-  for(let i=0;i<stringA.length;i++){
+function Compressed2(stringA) {
+  let CompressedString = "";
+  let countU = 0;
+  for (let i = 0; i < stringA.length; i++) {
     countU++;
-    if(stringA[i] !=stringA[i+1]){
-      unCompressedString += stringA[i]+countU
-      countU=0
+    if (stringA[i] != stringA[i + 1]) {
+      CompressedString += stringA[i] + countU;
+      countU = 0;
     }
   }
-  console.log(unCompressedString)
-
+  console.log(CompressedString);
 }
-Compressed2("aaaabbbccd")
-
-
-
+Compressed2("aaaabbbccd");
 
 console.log(
   "----------------------------------------------------------------------------------------"
 );
 
+//Problem 11---->
+
+let h = "4a3c2b";
+
+let even = [];
+let odd = [];
+
+for (let i = 0; i < h.length; i++) {
+  if (i % 2 == 0) {
+    even.push(h[i]);
+  } else {
+    odd.push(h[i]);
+  }
+}
+console.log(even);
+console.log(odd);
+
+newString = " ";
+
+for (let i = 0; i < even.length; i++) {
+  newString = newString + odd[i].repeat(Number(even[i]));
+}
+console.log(newString);
+
+console.log(
+  "------------------------------------------------------------------------"
+);
+
 //Problem 12---->
 
-let numString = "123";
+let numString = [123];
 let newstr = "";
 for (let i = numString.length - 1; i >= 0; i--) {
   newstr += numString[i];
 }
 console.log(`ans${newstr}`);
+
+console.log(
+  "--------------------------------------------------------------------------"
+);
+
+//Problem 13---->Counting the number of occurance of character in string and result is in the object
+
+let allS = "agdjhgjfggchfgxhv";
+let output = {};
+
+for (let i = 0; i < allS.length; i++) {
+  if (output.hasOwnProperty(allS[i])) {
+    output[allS[i]] = output[allS[i]] + 1;
+  } else {
+    output[allS[i]] = 1;
+  }
+}
+console.log(output);
+
+//Problem 14---->Counting the number of occurance of character in string and result is in the object
+//When the string contain Capital letters
+
+let allCapital = "AGShgcFGvHCGHccshcsCShgcs";
+let output2 = {};
+allCapital=allCapital.toLowerCase() //----just lowercase the string
+
+for (let i = 0; i < allCapital.length; i++) {
+  if (output2.hasOwnProperty(allCapital[i])) {
+    output2[allCapital[i]] = output2[allCapital[i]] + 1;
+  } else {
+    output2[allCapital[i]] = 1;
+  }
+}
+console.log(output2);
+
+//Problem 15---->If the string contain special charectors in the string then counting of occurance
+//of character in the string (Numbers,Alphabets,Special charactors)
+
+let stringG = "AJHbhfdSGVKH1538$##^%%(*&kjsdhkvh";
+
+let numG = 0;
+let AbetsG = 0;
+let specialG = 0;
+
+for (let i = 0; i < stringG.length; i++) {
+  if (Number(stringG[i])) {
+    numG = numG + 1;
+  } else if (
+    (stringG[i] >= "A" && stringG[i] <= "z") ||
+    (stringG[i] >= "a" && stringG[i] <= "z")
+  ) {
+    AbetsG = AbetsG + 1;
+  } else specialG = specialG + 1;
+}
+console.log(numG, AbetsG, specialG);
