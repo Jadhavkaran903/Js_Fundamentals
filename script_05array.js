@@ -33,7 +33,7 @@ for (let i = 0; i < person.length; i++) {
 
 // reverse the Array
 
-for (i = person.length - 1; i >= 0; i--) {
+for (let i = person.length - 1; i >= 0; i--) {
     console.log(i)
     console.log(person[i])
 }

@@ -1,37 +1,42 @@
-let j = [1, 2, 3, 4, 5, 6];
+// // // let newstr =
+// // //   "I am new to javascript and i wish to learn every concept of javascript . javascript is great";
+// // // let one = newstr.split(" ");
 
-function printArr(arr) {
-  let arr2 = j
-  arr[0] = j;
-  console.log(arr2);
-}
-printArr(j);
+// // // let count = 0;
+// // // for (let i = 0; i < one.length; i++) {
+// // //   if (one[i].includes("javascript")) {
+// // //     count++;
+// // //   }
+// // // }
+// // // console.log(count);
+// // let names = ["chinmay", "amol", "poorva", "ramesh", "amit"]
+// // let fourcharletter = []
+// // for (let i = 0; i < names.length; i++) {
+// //     if (names[i].length == 4) {
+// //         fourcharletter.push(names[i])
 
-console.log(j);
+// //     }
+// // }
+// // console.log(fourcharletter)
 
-console.log("---------------------------------------------")
 
-// let x= 10
-// function printX(y){
-//     y=30
-//     console.log(y)
-//     //console.log(x)
-// }
-// printX(y)
-// console.log(x)
 
-console.log("--------------------------------------------")
+// let aa=[11,-22,33,44]
 
-// let persond = {
-//     namee: "karan",
-//     age : 25
+// let gd =aa.filter((el,index,Array)=>{
+//     return el> 0
+// })
+// console.log(gd)
 
-// }
-// function printObj (obj){
-//     obj.namee = "chin"
-//     console.log(obj)
-// }
 
-// console.log(persond)
-// printObj(persond)
-// console.log(obj)
+
+
+
+
+
+
+
+
+
+
+

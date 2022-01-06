@@ -26,10 +26,6 @@
 // // // })
 // // // console.log(newCart)
 
-
-
-
-
 // // let candidate = {
 // //     Firstnaam: "karan",
 // //     Surname: "Jadhav",
@@ -75,13 +71,11 @@
 // home.splice(1,2,"store room")
 // console.log(home)
 
-
 // for (let i=0;i < tfg.length;i++){
 //     console.log(tfg)
 // }
 
-
-// 
+//
 // for (let i=tfg.length-1;i>=0;i--){
 //     // console.log(tfg[i])
 //     console.log(tfg)
@@ -98,7 +92,7 @@
 //     if(agesr[i]>50){
 //         agesgrFIfty.push(agesr[i])
 //     }
-    
+
 // }
 // console.log(agesgrFIfty)
 
@@ -125,36 +119,145 @@
 // })
 // console.log(reminder)
 
-let namesOfStudents = ["chinmay", "sarika", "karan", "prem", "preeti"]
+// let namesOfStudents = ["chinmay", "sarika", "karan", "prem", "preeti"]
 
-let proff =namesOfStudents.forEach(function(el,index,arr){
-    console.log(`professor ${el}`)
-})
-console.log(proff)
+// let proff =namesOfStudents.forEach(function(el,index,arr){
+//     console.log(`professor ${el}`)
+// })
+// console.log(proff)
 
-let fourletter = namesOfStudents.filter(function(el,index,arr) {
-    return el.length==6
-})
-console.log(fourletter)
+// let fourletter = namesOfStudents.filter(function(el,index,arr) {
+//     return el.length==6
+// })
+// console.log(fourletter)
 
+// let friend = {
+//     name1: "prasad dhavle",
+//     age: 25,
+//     address: "Akluj",
+//     id: 67
+// }
+// console.table(friend)
 
-let friend = {
-    name1: "prasad dhavle",
-    age: 25,
-    address: "Akluj",
-    id: 67
+// console.log(`hey my friend name is ${friend.name1} and he is from ${friend.address}.`)
+
+class Bank {
+  constructor(name, accno, balance) {
+    this.name = name;
+    this.accno = accno;
+    this.balance = balance;
+    this.transactions = [];
+  }
+  deposite(amo) {
+    this.transactions.push(amo);
+    this.bal = this.bal + amo;
+    console.log(`the amount added is ${amo} in account`);
+    console.log(`your current bal is ${this.balance}`);
+    return this.balance;
+  }
+  withdraw(amo) {
+    if (amo < this.balance) {
+      this.transactions.push(-amo);
+      this.balance = this.balance - amo;
+      console.log(`the amount deducted is ${amo}from account`);
+      console.log(`your current balance is ${this.balance}`);
+      return this.balance;
+    } else {
+      console.log(`insufficent bal to withdraw`);
+    }
+  }
+  totalTransaction(array) {
+    let totalT = array.reduce(function (acc, el) {
+      return acc + Math.abs(el);
+    }, 0);
+    return totalT;
+  }
+
+  totalDeposit(array) {
+    let totalD = array
+      .filter(function (el) {
+        return el > 0;
+      })
+      .reduce(function (acc, el) {
+        return acc + el;
+      }, 0);
+    return totalD;
+  }
+  totalWithdraw(array) {
+    let totalW = array
+      .filter(function (el) {
+        return el < 0;
+      })
+      .reduce(function (acc, el) {
+        return acc + Math.abs(el); ///abs=absolute value
+      }, 0);
+    return totalW;
+  }
+  LastFiveTransaction(array) {
+    let LastFive = array.slice(-5);
+    console.log(LastFive);
+  }
 }
-console.table(friend)
 
-console.log(`hey my friend name is ${friend.name1} and he is from ${friend.address}.`)
+let prati = new Bank("prati", 123, 1000);
+console.log("deposited amount in account");
+prati.deposite(1000); //1
+console.log("withdraw amount from account");
+prati.withdraw(500); //2
+prati.deposite(1500); //3
+prati.withdraw(200); //4
+prati.deposite(2000); //5
+prati.withdraw(100); //6
+prati.deposite(3000); //7
+prati.withdraw(150); //8
 
+console.log(prati.transactions);
 
+console.log("total transaction");
+let totalTt = prati.totalTransaction(prati.transactions);
+console.log(totalTt);
 
+console.log("total deposit amount");
+let totalDd = prati.totalDeposit(prati.transactions);
+console.log(totalDd);
 
+console.log("total withdraw amount");
+let totalWw = prati.totalWithdraw(prati.transactions);
+console.log(totalWw);
 
+console.log("last five amount");
+prati.LastFiveTransaction(prati.transactions);
 
+//-------------------------------------------------------------
 
+let joiningYear = [2011, 2015, 2014, 2016, 2020, 2009];
+let namess = ["Karan Jadhav", "Prasad Dhavale", "Abhieet Dhaide", "Pratiksha Palve", "Tushar Hande", "Ashutosh Chukekar"];
 
+function Service(arr) {
+  let years = [];
+  for (let i = 0; i < arr.length; i++) {
+    years.push(2021 - arr[i]);
+  }
+  return years;
+}
 
+function ServiceA(arr) {
+  let years = [];
+  for (let i = 0; i < arr.length; i++) {
+    years.push(58 - (2021 - arr[i]));
+  }
+  return years;
+}
+let ServiceDone = Service(joiningYear);
+console.log(`Service provided [${ServiceDone}] years`);
 
+let ServiceRemain = ServiceA(joiningYear);
+console.log(`Service remaining until your age is[${ServiceRemain}] years`);
+
+for(let k=0;k<namess.length;k++){
+  console.log("Thank you Mr/Miss",namess[k],"for your",ServiceDone[k],"years of service")
+}
+
+let sorted =ServiceDone.sort(function(a, b){return b-a})
+console.log(sorted)
 

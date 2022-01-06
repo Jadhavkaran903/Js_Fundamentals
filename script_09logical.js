@@ -26,7 +26,7 @@ console.log(
 
 let numArray = [21, -65, 43, 98, -23, 98, 56, -37];
 let highest = 0;
-let lowest = numArray[0];
+let lowest = 0;
 for (let i = 0; i < numArray.length; i++) {
   if (numArray[i] > highest) {
     highest = numArray[i];

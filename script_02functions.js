@@ -18,6 +18,7 @@ calculator(50, 20);
 
 console.log("-----------------")
 
+
 //Function without parameter and without return type
 
 // function add(){
